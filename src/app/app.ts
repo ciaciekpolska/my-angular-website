@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { About } from './about/about';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [About],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [RouterModule],
+  template: `
+    <h1>My Angular App</h1>
+    <a routerLink="/about">Go to About</a>
+    <router-outlet></router-outlet>
+  `
 })
-export class App {
-  protected title = 'my-angular-website';
-}
+
+export class App {}
+
